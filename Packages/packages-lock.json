@@ -1,5 +1,60 @@
 {
   "dependencies": {
+    "com.annulusgames.lit-motion": {
+      "version": "https://github.com/annulusgames/LitMotion.git?path=src/LitMotion/Assets/LitMotion",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.burst": "1.6.0",
+        "com.unity.collections": "1.5.1",
+        "com.unity.mathematics": "1.0.1"
+      },
+      "hash": "1d170af70c7db3df372dc4796c843f81e780530c"
+    },
+    "com.bazyleu.unistate": {
+      "version": "https://github.com/bazyleu/UniState.git?path=Assets/UniState",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f97b0d1a9660125f60ae3b2de96a53bbb16b6527"
+    },
+    "com.codewriter.triinspector": {
+      "version": "https://github.com/codewriter-packages/Tri-Inspector.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.localization": "1.0.0"
+      },
+      "hash": "b53903e192dfb866bca7d2ecab594eca79cea6cf"
+    },
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "73a63b7f672b88f7e9992f6917eb458a8cbb6fa9"
+    },
+    "com.firstsymbol.extdebuglogger": {
+      "version": "https://github.com/FirstSymbol/ExtDebugLogger.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "c0de14a7e71128d88d41e6e3d315acd4cf2bce4d"
+    },
+    "com.firstsymbol.extinspectortools": {
+      "version": "https://github.com/FirstSymbol/ExtInspectorTools.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "14abbebf246e00e82f8c19b9a7d5602bd4652807"
+    },
+    "com.firstsymbol.windowssystem": {
+      "version": "https://github.com/FirstSymbol/Windows-system.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "2fa5e98bcdcc69c5bbded5057d1485302e111031"
+    },
     "com.unity.2d.animation": {
       "version": "12.0.2",
       "depth": 0,
@@ -89,7 +144,7 @@
     },
     "com.unity.burst": {
       "version": "1.8.25",
-      "depth": 2,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1",
@@ -149,6 +204,13 @@
         "com.unity.modules.uielements": "1.0.0"
       },
       "url": "https://packages.unity.com"
+    },
+    "com.unity.localization": {
+      "version": "https://github.com/codewriter-packages/Unity-Localization-Stub-for-Tri-Inspector.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "184244fa1721e8e5da6aff2aca29b92f0a1e5ec7"
     },
     "com.unity.mathematics": {
       "version": "1.3.2",
