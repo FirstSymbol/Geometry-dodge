@@ -1,7 +1,6 @@
 {
   "dependencies": {
     "com.annulusgames.lit-motion": "https://github.com/annulusgames/LitMotion.git?path=src/LitMotion/Assets/LitMotion",
-    "com.bazyleu.unistate": "https://github.com/bazyleu/UniState.git?path=Assets/UniState",
     "com.codewriter.triinspector": "https://github.com/codewriter-packages/Tri-Inspector.git",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.firstsymbol.extdebuglogger": "https://github.com/FirstSymbol/ExtDebugLogger.git",

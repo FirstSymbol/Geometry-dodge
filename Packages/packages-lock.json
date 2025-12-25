@@ -11,13 +11,6 @@
       },
       "hash": "1d170af70c7db3df372dc4796c843f81e780530c"
     },
-    "com.bazyleu.unistate": {
-      "version": "https://github.com/bazyleu/UniState.git?path=Assets/UniState",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "f97b0d1a9660125f60ae3b2de96a53bbb16b6527"
-    },
     "com.codewriter.triinspector": {
       "version": "https://github.com/codewriter-packages/Tri-Inspector.git",
       "depth": 0,
