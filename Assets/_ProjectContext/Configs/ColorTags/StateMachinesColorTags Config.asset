@@ -16,8 +16,8 @@ MonoBehaviour:
     _editorKeyRatio: 0.5
     pairs:
     - key: 0
-      value: {r: 0.6349808, g: 0.16420436, b: 0.7735849, a: 0}
+      value: {r: 0.6349808, g: 0.16420436, b: 0.7735849, a: 1}
       isCorrect: 1
     - key: 1
-      value: {r: 0.22316661, g: 0.8018868, b: 0.391109, a: 0}
+      value: {r: 0.22316661, g: 0.8018868, b: 0.391109, a: 1}
       isCorrect: 1

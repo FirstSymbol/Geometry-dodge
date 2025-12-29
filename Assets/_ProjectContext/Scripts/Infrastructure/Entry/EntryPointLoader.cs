@@ -7,7 +7,7 @@ namespace Scripts.Infrastructure.Entry
   {
     private void Awake()
     {
-      if (!EntryPoint.Initialized)
+      if (!EntryPoint.Initialized && SceneManager.GetActiveScene().buildIndex != 0)
         SceneManager.LoadScene(0);
     }
   }

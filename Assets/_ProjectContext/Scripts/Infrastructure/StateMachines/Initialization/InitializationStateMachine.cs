@@ -13,6 +13,7 @@ namespace Infrastructure.StateMachines
     [Inject]
     public InitializationStateMachine(IStatesFactory statesFactory) : base()
     {
+      RegisterState(statesFactory.Create<InitializationInputServiceState>(this));
       RegisterState(statesFactory.Create<InitializationFinalizerState>(this));
     }
   }

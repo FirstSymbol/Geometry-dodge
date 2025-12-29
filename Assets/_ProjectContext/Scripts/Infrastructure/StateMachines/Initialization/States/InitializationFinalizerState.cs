@@ -6,7 +6,6 @@ namespace Infrastructure.StateMachines.States
   public class InitializationFinalizerState : BaseInitializationState
   {
     private IStateMachineFactory<GameplayStateMachine> _stateMachineFactory;
-    
     public InitializationFinalizerState(IStateMachineFactory<GameplayStateMachine> stateMachineFactory, InitializationStateMachine stateMachine) : base(stateMachine)
     {
       _stateMachineFactory = stateMachineFactory;
@@ -19,8 +18,7 @@ namespace Infrastructure.StateMachines.States
 
     public override UniTask Enter()
     {
-      var stateMachine = _stateMachineFactory.GetFrom(this);
-      stateMachine.Enter<GameloopState>();
+      _stateMachineFactory.GetFrom(this).Enter<GameloopState>();
       return UniTask.CompletedTask;
     }
   }

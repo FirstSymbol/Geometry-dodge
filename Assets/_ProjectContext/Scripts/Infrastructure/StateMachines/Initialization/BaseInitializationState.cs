@@ -6,7 +6,7 @@ namespace Infrastructure.StateMachines
 {
   public abstract class BaseInitializationState : IState, IEnterableState
   {
-    InitializationStateMachine stateMachine;
+    protected InitializationStateMachine stateMachine;
     [Inject]
     public BaseInitializationState(InitializationStateMachine stateMachine) => 
       this.stateMachine = stateMachine;
