@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Scripts.Installers
 {
-  public class ProvidersInstaller : MonoInstaller
+  public class ProjectProvidersInstaller : MonoInstaller
   {
     [SerializeField] private ScenesProvider scenesProvider;
     public override void InstallBindings()
