@@ -1,4 +1,5 @@
 ﻿using System;
+using ExtInspectorTools;
 using Infrastructure.Services.Input;
 using Infrastructure.Services.Input.Bindings;
 using UnityEngine;
@@ -10,11 +11,12 @@ namespace Gameplay.Player
   public class Player : MonoBehaviour
   {
     [Inject] private IInputBindingService inputBindingService;
-    private PlayerInteractionBind interactionBind;
+    [SerializeField] private SerializableType<IInputBindBase> interactionBindType;
+    private IInputBindBase interactionBind;
 
     private void OnEnable()
     {
-      interactionBind ??= inputBindingService.GetBind<PlayerInteractionBind>();
+      interactionBind ??= inputBindingService.GetBind(interactionBindType.Type);
       
       interactionBind?.AddBindingInstance(this);
     }

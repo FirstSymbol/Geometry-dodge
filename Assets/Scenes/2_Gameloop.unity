@@ -205,6 +205,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f2a054d37c9584cafa91c6cb1662cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Player.Player
+  interactionBindType:
+    _typeName: Infrastructure.Services.Input.Bindings.PlayerInteractionBind, Assembly-CSharp,
+      Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!4 &1351220667
 Transform:
   m_ObjectHideFlags: 0

@@ -9,24 +9,24 @@ namespace Infrastructure.Services.Input
 {
   public abstract class InputBind<T> : IMultiplyInputBind<T> where T : class
   {
-    public bool AddBindingInstance(IInputBindBase bindingInstance)
+    public bool AddBindingInstance(object bindingInstance)
     {
       if (bindingInstance == null)
         return false;
-      var value = ExtractSelfTypeFromParent(bindingInstance);
-      return value != null && AddBindingInstance(bindingInstance as InputBind<T>);
+
+      if (bindingInstance is T instance)
+        return AddBindingInstance(instance);
+      return false;
     }
 
-    public bool RemoveBindingInstance(IInputBindBase bindingInstance)
+    public bool RemoveBindingInstance(object bindingInstance)
     {
       if (bindingInstance == null)
         return false;
-      var value = ExtractSelfTypeFromParent(bindingInstance);
-      return value != null && RemoveBindingInstance(bindingInstance as InputBind<T>);
+      if (bindingInstance is T instance)
+        return RemoveBindingInstance(instance);
+      return false;
     }
-
-    private static Type ExtractSelfTypeFromParent(IInputBindBase bindingInstance) => 
-      bindingInstance.GetType().GetParentTypes().Select(t => t == typeof(InputBind<T>) ? t : null).First();
 
     public bool IsBinded { get; private set; }
     protected abstract HashSet<T> BindedInstances { get; set; }

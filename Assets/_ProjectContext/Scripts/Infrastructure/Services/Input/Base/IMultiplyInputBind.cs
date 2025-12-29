@@ -2,8 +2,8 @@
 {
   public interface IInputBindBase
   {
-    public bool AddBindingInstance(IInputBindBase bindingInstance);
-    public bool RemoveBindingInstance(IInputBindBase bindingInstance);
+    public bool AddBindingInstance(object bindingInstance);
+    public bool RemoveBindingInstance(object bindingInstance);
     bool IsBinded { get; }
     bool Bind();
     bool UnBind();
