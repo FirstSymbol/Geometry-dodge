@@ -32,7 +32,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "30515960843d3bd4f1afa5e6ac79bb4560ff39e4"
+      "hash": "f53291923d4c85c13a43b61a10ae360205b74375"
     },
     "com.firstsymbol.extinspectortools": {
       "version": "https://github.com/FirstSymbol/ExtInspectorTools.git",

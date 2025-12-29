@@ -10,14 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 64747cdbcc9b41ddaf9bbe186f0898bf, type: 3}
-  m_Name: StateMachinesColorTags Config
+  m_Name: ColorTagColors
   m_EditorClassIdentifier: Assembly-CSharp::_ProjectContext.Scripts.Infrastructure.Configs.Log.StateMachinesColorTagsConfig
-  <ColorDictionary>k__BackingField:
+  <stateMachinesColors>k__BackingField:
     _editorKeyRatio: 0.5
     pairs:
     - key: 0
-      value: {r: 0.6349808, g: 0.16420436, b: 0.7735849, a: 1}
+      value: {r: 0.45801315, g: 0.7264151, b: 0.19530971, a: 1}
       isCorrect: 1
     - key: 1
-      value: {r: 0.22316661, g: 0.8018868, b: 0.391109, a: 1}
+      value: {r: 0.6509804, g: 0.2117647, b: 0.53381884, a: 1}
+      isCorrect: 1
+  <inputServiceColors>k__BackingField:
+    _editorKeyRatio: 0.5
+    pairs:
+    - key: 0
+      value: {r: 0.3244037, g: 0.41079742, b: 0.509434, a: 1}
+      isCorrect: 1
+    - key: 1
+      value: {r: 0.24270204, g: 0.42059848, b: 0.509434, a: 1}
       isCorrect: 1
