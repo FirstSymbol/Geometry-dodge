@@ -9,7 +9,7 @@
         "com.unity.collections": "1.5.1",
         "com.unity.mathematics": "1.0.1"
       },
-      "hash": "1d170af70c7db3df372dc4796c843f81e780530c"
+      "hash": "a174f0ace85831bc6790d497d2d683a64fc513dd"
     },
     "com.codewriter.triinspector": {
       "version": "https://github.com/codewriter-packages/Tri-Inspector.git",
@@ -18,7 +18,7 @@
       "dependencies": {
         "com.unity.localization": "1.0.0"
       },
-      "hash": "b53903e192dfb866bca7d2ecab594eca79cea6cf"
+      "hash": "b231c1eb15a9e53762e16504589ce6ac885816ef"
     },
     "com.cysharp.unitask": {
       "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
@@ -32,7 +32,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "f53291923d4c85c13a43b61a10ae360205b74375"
+      "hash": "b7f74d7316888f19f0c94a57b9b2212b3c20c656"
     },
     "com.firstsymbol.extinspectortools": {
       "version": "https://github.com/FirstSymbol/ExtInspectorTools.git",
@@ -53,7 +53,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "2fa5e98bcdcc69c5bbded5057d1485302e111031"
+      "hash": "dd19ebb52c4e52b25cde223d1f3625305a86ec2b"
     },
     "com.svermeulen.extenject": {
       "version": "https://github.com/Mathijs-Bakker/Extenject.git?path=UnityProject/Assets/Plugins/Zenject/Source",
