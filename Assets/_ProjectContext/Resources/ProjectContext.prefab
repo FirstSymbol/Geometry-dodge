@@ -201,3 +201,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Scripts.Installers.ProvidersInstaller
   scenesProvider: {fileID: 11400000, guid: 05e138dee1fdcc84ab7a97174b2d1800, type: 2}
+  windowsProvider: {fileID: 11400000, guid: ed90d25f068b527438b49390be6ceb6c, type: 2}
