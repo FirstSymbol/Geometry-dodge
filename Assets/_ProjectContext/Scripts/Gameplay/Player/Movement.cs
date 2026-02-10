@@ -9,6 +9,7 @@ namespace Gameplay.Player
 
     private void Move()
     {
+      velocity.Normalize();
       if (velocity.magnitude <= 0)
         return;
       
