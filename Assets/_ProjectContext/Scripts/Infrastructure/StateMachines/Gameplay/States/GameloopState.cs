@@ -11,6 +11,8 @@ namespace Infrastructure.StateMachines.States
     private readonly IInputBindingService _bindingService;
     
     private  PlayerInteractionBind _playerInteractionBind;
+    private  PlayerWASDMovementBind _playerWASDMovementBind;
+    private  PlayerDashMovementBind _playerDashMovementBind;
 
     public GameloopState(IInputBindingService bindingService, IScenesProvider sceneProvider, GameplayStateMachine stateMachine) : base(stateMachine)
     {
@@ -21,13 +23,21 @@ namespace Infrastructure.StateMachines.States
     public override UniTask Exit()
     {
       _playerInteractionBind?.UnBind(); 
+      _playerWASDMovementBind?.UnBind();
+      _playerDashMovementBind?.UnBind();
       return default;
     }
 
     public override async UniTask Enter()
     {
       _playerInteractionBind ??= _bindingService.GetBind<PlayerInteractionBind>();
-      _playerInteractionBind.Bind();
+      _playerWASDMovementBind ??= _bindingService.GetBind<PlayerWASDMovementBind>();
+      _playerDashMovementBind ??= _bindingService.GetBind<PlayerDashMovementBind>();
+      
+      _playerInteractionBind?.Bind();
+      _playerWASDMovementBind?.Bind();
+      _playerDashMovementBind?.Bind();
+
       await _sceneProvider.Gameloop.LoadSceneAsync();
     }
   }

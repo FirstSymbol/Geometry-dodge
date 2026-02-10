@@ -1,17 +1,17 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Gameplay.Player
 {
-  public class PlayerGraphic : MonoBehaviour
+  public class PlayerMovementGraphic : MonoBehaviour
   {
     [SerializeField] private SpriteRenderer playerInSprite;
     [SerializeField] private float playerInRadius;
     [SerializeField] private bool displayPlayerInRadius;
     [SerializeField] private Transform playerTransform;
-    public void SetMoveGraphic(in Vector2 move)
+    
+    public void SetGraphic(in Vector2 move)
     {
-       
+       playerInSprite.gameObject.transform.localPosition = move * playerInRadius;
     }
 
     private void OnDrawGizmos()

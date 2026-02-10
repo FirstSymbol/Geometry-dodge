@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Security.Permissions;
 using ExtInspectorTools;
 using Infrastructure.Services.Input;
 using Infrastructure.Services.Input.Bindings;
+using Scripts.Infrastructure.Entry;
 using UnityEngine;
 using Zenject;
 using Logger = ExtDebugLogger.Logger;
@@ -11,12 +13,16 @@ namespace Gameplay.Player
   public class Player : MonoBehaviour
   {
     [Inject] private IInputBindingService inputBindingService;
-    [SerializeField] private SerializableType<IInputBindBase> interactionBindType;
-    private IInputBindBase interactionBind;
+    
+    public PlayerMovement playerMovement;
+    
+    private PlayerInteractionBind interactionBind;
 
     private void OnEnable()
     {
-      interactionBind ??= inputBindingService.GetBind(interactionBindType.Type);
+      if (!EntryPoint.Initialized)
+        return;
+      interactionBind ??= inputBindingService.GetBind<PlayerInteractionBind>();
       
       interactionBind?.AddBindingInstance(this);
     }
@@ -26,6 +32,7 @@ namespace Gameplay.Player
       interactionBind?.RemoveBindingInstance(this);
     }
 
+    
     public void Test()
     {
       Logger.Log("Test");

@@ -28,7 +28,9 @@ namespace Infrastructure.StateMachines.States
       _inputService.AddInput(gameInput);
       
       // InputBindingService
-      var t = _inputBindingService.AddBinding<PlayerInteractionBind>();
+      _inputBindingService.AddBinding<PlayerInteractionBind>();
+      _inputBindingService.AddBinding<PlayerWASDMovementBind>();
+      _inputBindingService.AddBinding<PlayerDashMovementBind>();
       
       gameInput.Enable();
       
