@@ -1,9 +1,9 @@
 ﻿using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Gameplay
+namespace Gameplay.Shooting
 {
-  public class EnemyShooting : MonoBehaviour
+  public class DefaultEnemyShooting : MonoBehaviour
   {
     [SerializeField] private EnemyProjectile  projectilePrefab;
     [SerializeField] private Transform target;

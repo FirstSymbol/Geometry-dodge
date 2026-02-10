@@ -1,17 +1,20 @@
 ﻿using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
+using Gameplay.Movement;
+using Gameplay.Shooting;
 using UnityEngine;
 
 namespace Gameplay
 {
-  public class EnemyAI : MonoBehaviour
+  public class TriangleEnemyAI : MonoBehaviour
   {
-    [SerializeField] private EnemyMovement enemyMovement;
-    [SerializeField] private EnemyShooting enemyShooting;
+    [SerializeField] private DefaultEnemyMovement enemyMovement;
+    [SerializeField] private DefaultEnemyShooting defaultEnemyShooting;
 
     [SerializeField] private float shootRate = 1f;
-    [SerializeField] private CancellationTokenSource _shootCts;
+    
+    private CancellationTokenSource _shootCts;
     private void OnEnable()
     {
       _shootCts = new CancellationTokenSource();
@@ -34,7 +37,7 @@ namespace Gameplay
       while (_shootCts.IsCancellationRequested == false)
       {
         await UniTask.WaitForSeconds(shootRate);
-        enemyShooting.Shoot();
+        defaultEnemyShooting.Shoot();
       }
     }
   }
