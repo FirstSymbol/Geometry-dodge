@@ -3,6 +3,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using Gameplay.Movement;
 using Gameplay.Shooting;
+using Scripts.Infrastructure.Entry;
 using UnityEngine;
 
 namespace Gameplay
@@ -17,6 +18,8 @@ namespace Gameplay
     private CancellationTokenSource _shootCts;
     private void OnEnable()
     {
+      if (!EntryPoint.Initialized)
+        return;
       _shootCts = new CancellationTokenSource();
       ShootRoutine().Forget();
     }
