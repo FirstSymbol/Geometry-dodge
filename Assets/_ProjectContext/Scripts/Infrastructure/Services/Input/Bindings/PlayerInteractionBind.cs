@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using ExtDebugLogger;
-using Gameplay.Player;
+using Gameplay;
 using ModestTree;
 using UnityEngine.InputSystem;
 

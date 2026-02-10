@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Gameplay.Player;
+using Gameplay;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

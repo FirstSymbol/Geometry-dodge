@@ -6,7 +6,7 @@ using Scripts.Infrastructure.Entry;
 using UnityEngine;
 using Zenject;
 
-namespace Gameplay.Player
+namespace Gameplay
 {
   public class PlayerMovement : MonoBehaviour
   {

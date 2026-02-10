@@ -8,7 +8,7 @@ using UnityEngine;
 using Zenject;
 using Logger = ExtDebugLogger.Logger;
 
-namespace Gameplay.Player
+namespace Gameplay
 {
   public class Player : MonoBehaviour
   {
