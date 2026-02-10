@@ -133,10 +133,10 @@ GameObject:
   - component: {fileID: 332837989527799965}
   - component: {fileID: 6832553770792905252}
   - component: {fileID: 3992385263417667823}
-  - component: {fileID: 6216112287718530326}
   - component: {fileID: 8133625420775011074}
+  - component: {fileID: 505132128489520038}
   m_Layer: 6
-  m_Name: Enemy_1
+  m_Name: TriangleEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,9 +170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c2754f4749f4adb8dc50e6c12b6ede3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Enemy
-  enemyAI: {fileID: 3992385263417667823}
-  enemyMovement: {fileID: 6216112287718530326}
-  enemyShooting: {fileID: 8133625420775011074}
+  triangleEnemyAI: {fileID: 3992385263417667823}
+  enemyMovement: {fileID: 505132128489520038}
+  defaultEnemyShooting: {fileID: 8133625420775011074}
 --- !u!114 &3992385263417667823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,25 +185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2cc37c6b3c4464bb110eb73fc3b7a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.EnemyAI
-  enemyMovement: {fileID: 6216112287718530326}
-  enemyShooting: {fileID: 8133625420775011074}
+  enemyMovement: {fileID: 505132128489520038}
+  defaultEnemyShooting: {fileID: 8133625420775011074}
   shootRate: 1
---- !u!114 &6216112287718530326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7992965024191275873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 037ac944ec28401c9d31667d6307d746, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.EnemyMovement
-  target: {fileID: 0}
-  speed: 0.2
-  distanceToStop: 2
-  displayRadius: 0
 --- !u!114 &8133625420775011074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,3 +203,19 @@ MonoBehaviour:
   projectilePrefab: {fileID: 3416922939255745487, guid: 1259337368d130c4db6a628d755efc10, type: 3}
   target: {fileID: 0}
   projectilesContainer: {fileID: 0}
+--- !u!114 &505132128489520038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7992965024191275873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81e88af157d420b9441b3942e69bdcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Movement.DefaultEnemyMovement
+  target: {fileID: 0}
+  speed: 0.2
+  distanceToStop: 2
+  displayRadius: 0

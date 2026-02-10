@@ -1,9 +1,8 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Gameplay
+namespace Gameplay.Movement
 {
-  public class EnemyMovement : MonoBehaviour
+  public class DefaultEnemyMovement : MonoBehaviour
   {
     [SerializeField] private Transform target;
     [SerializeField] private float speed = 0.5f;
