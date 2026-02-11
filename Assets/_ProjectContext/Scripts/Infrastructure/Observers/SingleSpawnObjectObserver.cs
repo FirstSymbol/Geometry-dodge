@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Infrastructure.Observers
 {
-  public class FactorySpawnObjectObserver<T>
+  public class SingleSpawnObjectObserver<T>
   {
     public Action<T> onItemCreated;
     public bool isSpawned = false;

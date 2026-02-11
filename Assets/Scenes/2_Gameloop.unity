@@ -1220,6 +1220,14 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 3733445908068791586, guid: 4b9f27a0f302453469baadafcdc84f79, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 1667811907}
+    - target: {fileID: 3733445908068791586, guid: 4b9f27a0f302453469baadafcdc84f79, type: 3}
+      propertyPath: projectileContainer
+      value: 
+      objectReference: {fileID: 606649464}
     - target: {fileID: 5471038015618704475, guid: 4b9f27a0f302453469baadafcdc84f79, type: 3}
       propertyPath: m_Name
       value: Player

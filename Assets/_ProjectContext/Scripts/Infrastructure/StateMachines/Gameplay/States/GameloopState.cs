@@ -10,7 +10,7 @@ namespace Infrastructure.StateMachines.States
     private readonly IScenesProvider _sceneProvider;
     private readonly IInputBindingService _bindingService;
     
-    private  PlayerInteractionBind _playerInteractionBind;
+    private  PlayerShootBind _playerShootBind;
     private  PlayerWASDMovementBind _playerWASDMovementBind;
     private  PlayerDashMovementBind _playerDashMovementBind;
 
@@ -22,7 +22,7 @@ namespace Infrastructure.StateMachines.States
 
     public override UniTask Exit()
     {
-      _playerInteractionBind?.UnBind(); 
+      _playerShootBind?.UnBind(); 
       _playerWASDMovementBind?.UnBind();
       _playerDashMovementBind?.UnBind();
       return default;
@@ -30,11 +30,11 @@ namespace Infrastructure.StateMachines.States
 
     public override async UniTask Enter()
     {
-      _playerInteractionBind ??= _bindingService.GetBind<PlayerInteractionBind>();
+      _playerShootBind ??= _bindingService.GetBind<PlayerShootBind>();
       _playerWASDMovementBind ??= _bindingService.GetBind<PlayerWASDMovementBind>();
       _playerDashMovementBind ??= _bindingService.GetBind<PlayerDashMovementBind>();
       
-      _playerInteractionBind?.Bind();
+      _playerShootBind?.Bind();
       _playerWASDMovementBind?.Bind();
       _playerDashMovementBind?.Bind();
 

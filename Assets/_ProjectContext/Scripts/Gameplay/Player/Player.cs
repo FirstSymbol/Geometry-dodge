@@ -16,23 +16,6 @@ namespace Gameplay
     
     public PlayerMovement playerMovement;
     
-    private PlayerInteractionBind interactionBind;
-
-    private void OnEnable()
-    {
-      if (!EntryPoint.Initialized)
-        return;
-      interactionBind ??= inputBindingService.GetBind<PlayerInteractionBind>();
-      
-      interactionBind?.AddBindingInstance(this);
-    }
-
-    private void OnDisable()
-    {
-      interactionBind?.RemoveBindingInstance(this);
-    }
-
-    
     public void Test()
     {
       Logger.Log("Test");
