@@ -37,7 +37,7 @@ namespace Gameplay
 
     private async UniTask ShootRoutine()
     {
-      while (_shootCts.IsCancellationRequested == false)
+      while (!_shootCts.IsCancellationRequested)
       {
         await UniTask.WaitForSeconds(shootRate, cancellationToken:_shootCts.Token);
         defaultEnemyShooting.Shoot();

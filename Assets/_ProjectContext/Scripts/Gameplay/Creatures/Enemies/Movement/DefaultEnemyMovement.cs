@@ -5,6 +5,8 @@ namespace Gameplay.Movement
   public class DefaultEnemyMovement : MonoBehaviour
   {
     [SerializeField] private Transform target;
+    [SerializeField] private Transform rotateRoot;
+    [SerializeField] private Transform moveRoot;
     [SerializeField] private float speed = 0.5f;
     [SerializeField] private float distanceToStop;
     [SerializeField] private bool displayRadius;
@@ -22,9 +24,10 @@ namespace Gameplay.Movement
       float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90;
       
       
-      transform.rotation = Quaternion.Euler(0f, 0f, angle);
+      rotateRoot.rotation = Quaternion.Euler(0f, 0f, angle);
+      Vector2 dir = (target.position - transform.position).normalized;
       if (!needStop) 
-        transform.position += transform.up * (speed * Time.deltaTime);
+        moveRoot.position += new Vector3(dir.x * (speed * Time.deltaTime), dir.y * (speed * Time.deltaTime), moveRoot.position.z);
     }
 
     private void OnDrawGizmos()

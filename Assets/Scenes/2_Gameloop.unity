@@ -785,7 +785,6 @@ GameObject:
   - component: {fileID: 1902762372}
   - component: {fileID: 1902762371}
   - component: {fileID: 1902762370}
-  - component: {fileID: 1902762374}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -875,19 +874,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1902762374
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1902762369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd30725eeb9e4223b43b2ef0d482f4fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Scripts.Gameplay.TestScript
-  windowsContainer: {fileID: 1902762373}
 --- !u!1 &1978374079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,6 +1220,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3378629661446081395, guid: 4b9f27a0f302453469baadafcdc84f79, type: 3}
+      propertyPath: m_Power
+      value: 1.3708391
+      objectReference: {fileID: 0}
     - target: {fileID: 3488233429795623985, guid: 4b9f27a0f302453469baadafcdc84f79, type: 3}
       propertyPath: m_SortingOrder
       value: 100
@@ -1246,14 +1236,30 @@ PrefabInstance:
       propertyPath: projectileContainer
       value: 
       objectReference: {fileID: 606649464}
+    - target: {fileID: 3915585376525156759, guid: 4b9f27a0f302453469baadafcdc84f79, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4337384459842107682, guid: 4b9f27a0f302453469baadafcdc84f79, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5471038015618704475, guid: 4b9f27a0f302453469baadafcdc84f79, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5821038202151807824, guid: 4b9f27a0f302453469baadafcdc84f79, type: 3}
+      propertyPath: m_FillAmount
+      value: 0.463
       objectReference: {fileID: 0}
     - target: {fileID: 8291517284757087147, guid: 4b9f27a0f302453469baadafcdc84f79, type: 3}
       propertyPath: m_SortingOrder
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 8698694606716479611, guid: 4b9f27a0f302453469baadafcdc84f79, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 2008487321}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
