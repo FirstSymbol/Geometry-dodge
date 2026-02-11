@@ -23,11 +23,14 @@ namespace Gameplay.Cameras
     
     private void Update()
     {
+      
       MoveToTarget();
     }
 
     private void MoveToTarget()
     {
+      if (!target)
+        return;
       // var targetPos = _mainCamera.WorldToScreenPoint(target.position);
       
       var screenCenter = new Vector2(Screen.width/2, Screen.height/2);

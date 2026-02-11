@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 3992385263417667823}
   - component: {fileID: 8133625420775011074}
   - component: {fileID: 505132128489520038}
+  - component: {fileID: 5438760921365519951}
   - component: {fileID: 4732932941894110272}
   - component: {fileID: 6496363276532875332}
   m_Layer: 6
@@ -175,6 +176,7 @@ MonoBehaviour:
   triangleEnemyAI: {fileID: 3992385263417667823}
   enemyMovement: {fileID: 505132128489520038}
   defaultEnemyShooting: {fileID: 8133625420775011074}
+  health: {fileID: 5438760921365519951}
 --- !u!114 &3992385263417667823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +223,19 @@ MonoBehaviour:
   speed: 0.2
   distanceToStop: 2
   displayRadius: 0
+--- !u!114 &5438760921365519951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7992965024191275873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa9d56bf48945b68bf2fd9de9dd1a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Creatures.CreatureHealth
+  healthValue: 100
 --- !u!60 &4732932941894110272
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -14,6 +14,8 @@ namespace Gameplay.Movement
     
     public void Move()
     {
+      if (!target)
+        return;
       var needStop = GetDistance() <= distanceToStop;
 
       Vector2 direction = target.position - transform.position;

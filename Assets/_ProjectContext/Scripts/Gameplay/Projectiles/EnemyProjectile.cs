@@ -1,5 +1,6 @@
 ﻿using System.Threading;
 using Cysharp.Threading.Tasks;
+using Gameplay.Creatures;
 using UnityEngine;
 
 namespace Gameplay
@@ -8,8 +9,8 @@ namespace Gameplay
   {
     public float Damage => damage;
     public float Speed => speed;
-    [SerializeField] private float damage;
-    [SerializeField] private float speed;
+    [SerializeField] private int damage = 10;
+    [SerializeField] private int speed = 5;
     [SerializeField, Range(0, 30)] private float lifeTime = 10f;
     private bool _isLaunched;
     private CancellationTokenSource _cts;
@@ -38,8 +39,9 @@ namespace Gameplay
       _cts.Cancel();
     }
 
-    private void ShootHit()
+    private void ShootHit(ICreature creature)
     {
+      creature.Health.Damage(damage);
       _cts.Cancel();
       Destroy(gameObject);
     }
@@ -47,7 +49,10 @@ namespace Gameplay
     public void OnTriggerEnter2D(Collider2D collider)
     {
       if (collider.gameObject.layer != LayerMask.NameToLayer("Player")) return;
-      ShootHit();
+      if (collider.gameObject.TryGetComponent(out ICreature creature))
+      {
+        ShootHit(creature);
+      }
     }
   }
 }

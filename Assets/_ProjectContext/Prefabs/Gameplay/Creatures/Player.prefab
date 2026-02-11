@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 3270973005327217673}
   - component: {fileID: 9109778065729862911}
   - component: {fileID: 3733445908068791586}
+  - component: {fileID: 4242856372706310634}
   - component: {fileID: 3410800984578453559}
   - component: {fileID: 6578202692755867374}
   m_Layer: 9
@@ -264,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Player.Player
   playerMovement: {fileID: 3270973005327217673}
+  health: {fileID: 4242856372706310634}
 --- !u!114 &3270973005327217673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,6 +315,19 @@ MonoBehaviour:
   mainCamera: {fileID: 0}
   projectilePrefab: {fileID: 5819803477637955860, guid: 5da4f8e69e6eef946b505c4d3ae0ac2e, type: 3}
   projectileContainer: {fileID: 0}
+--- !u!114 &4242856372706310634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5471038015618704475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfa9d56bf48945b68bf2fd9de9dd1a08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Gameplay.Creatures.CreatureHealth
+  healthValue: 100
 --- !u!58 &3410800984578453559
 CircleCollider2D:
   m_ObjectHideFlags: 0
