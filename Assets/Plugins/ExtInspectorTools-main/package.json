@@ -1,0 +1,12 @@
+{
+  "name": "com.firstsymbol.extinspectortools",
+  "displayName": "ExtInspectorTools",
+  "version": "1.0.9",
+  "documentationUrl": "https://github.com/FirstSymbol/ExtInspectorTools.git",
+  "description": "Advanced inspector attributes & serializes for Unity",
+  "homepage": "https://github.com/FirstSymbol/ExtInspectorTools#readme",
+  "author": {
+    "name": "FirstSymbol",
+    "url": "https://linkedin.com/in/firstsymbol"
+  }
+}
