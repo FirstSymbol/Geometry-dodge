@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7040602276807321464}
-  - component: {fileID: 7455418596392372747}
+  - component: {fileID: 6589685591232781414}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -35,7 +35,7 @@ Transform:
   - {fileID: 6925464853406996172}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7455418596392372747
+--- !u!114 &6589685591232781414
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -44,14 +44,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 288676086400640580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4e6589720da476459dc6dd71624b071, type: 3}
+  m_Script: {fileID: 11500000, guid: 7a1e61b0c3bce044d9577a8b42a6c635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Zenject::Zenject.ProjectContext
   _scriptableObjectInstallers: []
   _monoInstallers:
-  - {fileID: 214418931638054323}
   - {fileID: 6796016512291075489}
   - {fileID: 8024483409686719501}
+  - {fileID: 214418931638054323}
   _installerPrefabs: []
   _findSiblingMonoInstallers: 0
   _parentNewObjectsUnderContext: 1

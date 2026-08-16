@@ -35,7 +35,10 @@ namespace Scripts.Gameplay.UI
     {
       var t = (float)creatureHealth.HealthValue / creatureHealth.MaxHealthValue;
       LMotion.Create(rectMask.padding.z, sliderValue - (sliderValue * t), duration)
-        .Bind(v => rectMask.padding = new Vector4(0, 0, v));
+        .Bind(v => rectMask.padding = new Vector4(0, 0, v))
+        .AddTo(rectMask)
+        .AddTo(this)
+        .AddTo(creatureHealth);
 
     }
   }
