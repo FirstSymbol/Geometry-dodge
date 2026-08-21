@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using Scripts.Gameplay.ECS.ComponentsData.Tags;
+using Scripts.Infrastructure.Entry;
+using Unity.Collections;
+using Unity.Entities;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Gameplay.Cameras
@@ -18,60 +23,57 @@ namespace Gameplay.Cameras
     [SerializeField] private Vector2 maxMouseLookOffset;
     [SerializeField] private Vector2 moveBox;
     [SerializeField] private PivotAlign pivotAlign;
-    
-    
-    
-    private void Update()
+    private EntityQuery _playerQuery;
+
+    private void Start()
     {
-      
+      if (!EntryPoint.Initialized)
+      {
+        return;
+      }
+
+      var world = World.DefaultGameObjectInjectionWorld;
+      if (world == null)
+      {
+        return;
+      }
+      var em =  world.EntityManager;
+      _playerQuery = em.CreateEntityQuery(ComponentType.ReadOnly<PlayerTag>(), ComponentType.ReadOnly<Unity.Transforms.LocalTransform>());
+    }
+    
+    private Entity FindPlayerEntity()
+    {
+      int count = _playerQuery.CalculateEntityCount();
+      if (count == 0) return Entity.Null;
+
+      using (NativeArray<Entity> entities = _playerQuery.ToEntityArray(Allocator.Temp))
+      {
+        return entities[0]; 
+      }
+    }
+
+    private void LateUpdate()
+    {
       MoveToTarget();
     }
 
     private void MoveToTarget()
     {
-      if (!target)
+      var playerEntity = FindPlayerEntity();
+      var em = World.DefaultGameObjectInjectionWorld.EntityManager;
+      if (!em.HasComponent<Unity.Transforms.LocalTransform>(playerEntity))
         return;
-      // var targetPos = _mainCamera.WorldToScreenPoint(target.position);
+      Unity.Transforms.LocalTransform playerTransform = em.GetComponentData<Unity.Transforms.LocalTransform>(playerEntity);
       
       var screenCenter = new Vector2(Screen.width/2, Screen.height/2);
-      
-      // Vector2 positive = new Vector2(screenCenter.x + moveBox.x, screenCenter.y + moveBox.y);
-      // Vector2 negative = new Vector2(screenCenter.x - moveBox.x, screenCenter.y - moveBox.y);
-      //
-      // Vector2 positiveWorld = _mainCamera.ScreenToWorldPoint(positive);
-      // Vector2 negativeWorld = _mainCamera.ScreenToWorldPoint(negative);
       
       var t = MoveMouseOffset();
       var tv = new Vector2(screenCenter.x + t.x, screenCenter.y + t.y);
       tv = _mainCamera.ScreenToWorldPoint(tv);
       var screenCenterWorld = _mainCamera.ScreenToWorldPoint(screenCenter);
       tv = new Vector2(tv.x - screenCenterWorld.x, tv.y - screenCenterWorld.y);
-      transform.position = new Vector3(target.transform.position.x + tv.x,target.transform.position.y + tv.y,transform.position.z);
+      transform.position = new Vector3(playerTransform.Position.x + tv.x,playerTransform.Position.y + tv.y,transform.position.z);
       
-      // if (!(targetPos.x < negative.x || targetPos.x > positive.x || targetPos.y < negative.y || targetPos.y > positive.y))
-      //   return;
-      //
-      // Vector2 vector = Vector2.zero;
-      //
-      // if (targetPos.x < negative.x)
-      // {
-      //   vector.x = target.position.x - negativeWorld.x;
-      // }
-      // else if (targetPos.x > positive.x)
-      // {
-      //   vector.x = target.position.x - positiveWorld.x;
-      // }
-      //
-      // if (targetPos.y < negative.y)
-      // {
-      //   vector.y = target.position.y - negativeWorld.y;
-      // }
-      // else if (targetPos.y > positive.y)
-      // {
-      //   vector.y = target.position.y - positiveWorld.y;
-      // }
-      //
-      // transform.position = new Vector3(transform.position.x + vector.x, transform.position.y + vector.y, transform.position.z);
     }
 
     private Vector2 MoveMouseOffset()

@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Gameplay;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 namespace Infrastructure.Services.Input.Bindings
 {
-  public class PlayerWASDMovementBind : InputBind<PlayerMovement>
+  public class PlayerWASDMovementBind : InputBind<Action<float2>>
   {
-    protected override HashSet<PlayerMovement> BindedInstances { get; set; }
+    protected override HashSet<Action<float2>> BindedInstances { get; set; }
     private GameInput _gameInput;
     private bool _pressed;
     
@@ -29,9 +31,9 @@ namespace Infrastructure.Services.Input.Bindings
     }
     private void Move(InputAction.CallbackContext obj)
     {
-      foreach (PlayerMovement playerMovement in BindedInstances)
+      foreach (var instance in BindedInstances)
       {
-        playerMovement.velocity = obj.ReadValue<Vector2>(); 
+        instance.Invoke(obj.ReadValue<Vector2>());
       }
     }
   }
